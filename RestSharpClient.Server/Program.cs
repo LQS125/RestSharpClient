@@ -2,10 +2,10 @@ using ApiClient;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// 注册 MyApiClient
+// 注册 MyApiClient，更换实际获取 token 的方法
 builder.Services.AddSingleton<IApiTokenProvider>(
     _ => new StaticApiTokenProvider(builder.Configuration["ApiClient:Token"]));
-
+// 注册 HttpClient
 builder.Services.AddHttpClient<MyApiClient>(client =>
 {
     client.BaseAddress = new Uri("https://api.example.com/");
