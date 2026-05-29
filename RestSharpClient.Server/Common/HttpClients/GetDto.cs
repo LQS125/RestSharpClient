@@ -1,8 +1,8 @@
 namespace ApiClient;
 
-public class UserDto
+public class GetDto
 {
     public int Id { get; set; }
 
-    public string? Name { get; set; }
+    public string? RunId { get; set; }
 }

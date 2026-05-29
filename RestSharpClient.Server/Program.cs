@@ -2,10 +2,10 @@ using ApiClient;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// 注册 MyApiClient
+// 注册 TokenProvider,来注册tokenprovider实例来获取token。AddSingleton<IApiTokenProvider>:整个应用程序生命周期，只创建一个IApiTokenProvider实例，所以地方共用
 builder.Services.AddSingleton<IApiTokenProvider>(
     _ => new StaticApiTokenProvider(builder.Configuration["ApiClient:Token"]));
-
+// 给 MyApiClient 类 自动分配一个 HttpClient
 builder.Services.AddHttpClient<MyApiClient>(client =>
 {
     client.BaseAddress = new Uri("https://api.example.com/");
