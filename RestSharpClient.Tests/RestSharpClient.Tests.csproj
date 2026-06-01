@@ -1,0 +1,29 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<!-- 项目基本配置 -->
+	<PropertyGroup>
+		<TargetFramework>net8.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings> <!--启用后，会自动引入一些常用命名空间-->
+		<Nullable>enable</Nullable>  <!--启用可为空引用类型检查，帮助避免空引用异常。例如 string?-->
+		<IsPackable>false</IsPackable>  <!--设置为 false，表示此项目不用于生成 NuGet 包（测试项目通常不需要打包发布）-->
+	</PropertyGroup>
+
+	<!-- 引用测试所需的 NuGet 包 -->
+	<ItemGroup>
+		<!-- 测试 SDK 必须，否则 dotnet test 无法运行 -->
+		<PackageReference Include="Microsoft.NET.Test.Sdk" Version="18.0.1" />
+		<!-- MSTest 适配器和框架 -->
+		<PackageReference Include="MSTest.TestAdapter" Version="4.0.2" />
+		<PackageReference Include="MSTest.TestFramework" Version="4.0.2" />
+	</ItemGroup>
+
+	<!-- 引用主项目代码 ,表示当前测试项目依赖于同一个解决方案中的 RestSharpClient.Server 项目。-->
+	<ItemGroup>
+		<ProjectReference Include="..\RestSharpClient.Server\RestSharpClient.Server.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<FrameworkReference Include="Microsoft.AspNetCore.App" />
+	</ItemGroup>
+
+</Project>

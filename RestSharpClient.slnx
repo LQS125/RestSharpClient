@@ -1,4 +1,5 @@
 <Solution>
   <Project Path="RestSharpClient.AppHost/RestSharpClient.AppHost.csproj" />
   <Project Path="RestSharpClient.Server/RestSharpClient.Server.csproj" />
+  <Project Path="RestSharpClient.Tests/RestSharpClient.Tests.csproj" />
 </Solution>
