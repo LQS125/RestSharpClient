@@ -6,7 +6,6 @@ namespace ApiClient;
 
 public class MyApiClient : ApiClientBase
 {
-    // : base(httpClient, tokenProvider)调用父类 ApiClientBase 的构造函数,把接收到的两个参数直接传给父类
     public MyApiClient(HttpClient httpClient, IApiTokenProvider? tokenProvider = null): base(httpClient, tokenProvider)
     {
     }
