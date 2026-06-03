@@ -2,4 +2,5 @@
   <Project Path="RestSharpClient.AppHost/RestSharpClient.AppHost.csproj" />
   <Project Path="RestSharpClient.Server/RestSharpClient.Server.csproj" />
   <Project Path="RestSharpClient.Tests/RestSharpClient.Tests.csproj" />
+  <Project Path="RestSharpClientV2/RestSharpClientV2.csproj" Id="b6065507-1424-43c7-80f4-ca10709d732e" />
 </Solution>
